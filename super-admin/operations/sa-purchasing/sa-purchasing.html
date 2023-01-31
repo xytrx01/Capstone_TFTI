@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TFSTI - Purchasing Order</title>
+    <link rel="shortcut icon" type="image/icon" href="../../../images/tfsti-logo-noname.png"/>    
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/sa-dashboard-style.css">
+    
+<body>
+    
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="user-wrapper">
+            <img src="../../../images/profile.png" alt="" class="profile-user" width="40px" height="40px">
+            <div>
+                <h4>Juan Dela Cruz</h4>
+                <small>Super Admin</small>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../../sa-dashboard.html"><span class="las la-tv"></span>
+                        <span>Dashboard</span></a>
+                </li>
+                
+                <li>
+                    <a href="../sa-inventory/sa-inventory.html"><span class="las la-warehouse"></span>
+                        <span>Inventories</span></a>
+                </li>
+                    <button class="oper-dropdown-btn">
+                        <a> <span class="las la-caret-down"></span>
+                            <span>Requisition</span> 
+                        </a>                    
+                    </button>
+                        <div class="dropdown-container">
+                            <li>
+                                <a href="../requisition/sa-pur_requi.html"><span class="las la-file"></span>
+                                    <span>Purchasing Request</span></a>
+                            </li>
+                            <li>
+                                <a href="../requisition/sa-deploy_requi.html" ><span class="las la-folder"></span>
+                                    <span>Deployment Request</span></a>
+                            </li> 
+                            <li>
+                                <a href="../requisition/sa-supp-requi.html" ><span class="lar la-folder-open"></span>
+                                    <span>Supply Request</span></a>
+                            </li>                        
+                        </div>
+                <li>                    
+                    <a href="../sa-purchasing/sa-purchasing.html" class="active"><span class="las la-dolly"></span>
+                        <span>Purchasing</span>
+                    </a>
+                </li>
+
+                <li>                    
+                    <a href="../../projects/sa-projects-ongoing.html"><span class="las la-pen-square"></span>
+                        <span>Projects</span>
+                    </a>
+                </li>
+
+                <li>                    
+                    <a href="../../administration/sa-users.html"><span class="las la-user-tie"></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+
+                <li>                    
+                    <a href="../../administration/sa-sett-users.html"><span class="las la-cog"></span>
+                        <span>Profile Settings</span>
+                    </a>
+                </li>
+                <li>                    
+                    <a href="../../../index.html"><span class="las la-sign-out-alt"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="logo-float">
+            <img src="../../../images/tfsti-logo.png" alt="">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Purchase Order
+            </h2>
+        </header>
+
+        <main>
+
+            <div class="upper-section">
+                <div class="search-wrapper">
+                    <span class="las la-search"></span>
+                    <input type="text" placeholder="Search here">
+                </div>
+            </div>            
+
+            <div class="order-grid">
+                <div class="order-header">
+                    <h3>PURCHASE ORDER LISTS</h3>
+                    <div class="order-buttons-style">
+                        <button class="add-btn" title="ADD NEW REQUEST"><a href="../sa-purchasing/sa-add-purchasing.html"><span class="las la-plus-circle"></span></a></button>
+                        <button class="pri-btn" title="PRINT REPORT"> <a href="../sa-purchasing/sa-print-order-purchase.html"><span class="las la-print"></span></a></button>
+                        <button class="expo-btn" title="EXPORT REPORT" > <a href="../sa-purchasing/sa-expo-order-purchase.html"><span class="las la-file-download"></span></a></button>
+                        <button class="order-sort-btn" onclick="userSortFunction()">
+                            <a> 
+                                <span></span> 
+                                <span class="las la-chevron-down"></span>
+                            </a>                    
+                        </button>
+                        <div class="order-sort-content" id="ordSortDropdown">
+                            <a href="#">Ascending</a>
+                            <a href="#">Descending</a>
+                        </div>
+                        
+                    </div>
+                        
+                </div>
+                <div class="order-projects">
+                    <div class="order">
+                        <div class="order-body">
+                            <div class="table-responsive" style="overflow-x: auto;">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>                                            
+                                            <td>Request ID</td>
+                                            <td>Requestor Name</td>
+                                            <td>Employee ID</td>
+                                            <td>Date Requested</td>
+                                            <td>Status</td>
+                                            <td>Action</td> 
+                                        </tr>
+                                    </thead>
+                                    <tbody>                                        
+                                        <tr>
+                                            <td><label>PREQ67490</label></td>
+                                            <td><label>Clarisse C. Vasques</label></td>
+                                            <td><label>008273126</label></td>
+                                            <td><label>Jan. 11, 2023</label></td>
+                                            <td><label class="stat-dec">Declined</label></td>
+                                            <td>
+                                                <div class="order-action-style">
+                                                    <button class="acc-btn" title="ACCEPT REQUEST" onclick="infoOpenPopup()"> <a href="#"><span class="las la-check-circle"></span></a></button>
+                                                    <button class="dec-btn" title="DECLINE REQUEST" onclick="canOpenPopup()"> <a href="#"><span class="las la-times-circle"></span></a></button>
+                                                    <button class="pri-btn" title="PRINT REPORT" > <a href="../sa-purchasing/sa-print-order-purchase.html"><span class="las la-print"></span></a></button>
+                                                    <button class="expo-btn" title="EXPORT REPORT" > <a href="../sa-purchasing/sa-expo-order-purchase.html"><span class="las la-file-download"></span></a></button>
+                                                </div>
+                                            </td>                                            
+                                        </tr>   
+                                        
+                                        <tr>
+                                            <td><label>PREQ67490</label></td>
+                                            <td><label>Clarisse C. Vasques</label></td>
+                                            <td><label>008273126</label></td>
+                                            <td><label>Jan. 11, 2023</label></td>
+                                            <td><label class="stat-appr">Approved</label></td>
+                                            <td>
+                                                <div class="order-action-style">
+                                                    <button class="acc-btn" title="ACCEPT REQUEST" onclick="infoOpenPopup()"> <a href="#"><span class="las la-check-circle"></span></a></button>
+                                                    <button class="dec-btn" title="DECLINE REQUEST" onclick="canOpenPopup()"> <a href="#"><span class="las la-times-circle"></span></a></button>
+                                                    <button class="pri-btn" title="PRINT REPORT" > <a href="../sa-purchasing/sa-print-order-purchase.html"><span class="las la-print"></span></a></button>
+                                                    <button class="expo-btn" title="EXPORT REPORT" > <a href="sa-expo-order-purchase.html"><span class="las la-file-download"></span></a></button>
+                                                </div>
+                                            </td>                                            
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td><label>PREQ67490</label></td>
+                                            <td><label>Clarisse C. Vasques</label></td>
+                                            <td><label>008273126</label></td>
+                                            <td><label>Jan. 11, 2023</label></td>
+                                            <td><label class="stat-pen">Pending</label></td>
+                                            <td>
+                                                <div class="order-action-style">
+                                                    <button class="acc-btn" title="ACCEPT REQUEST" onclick="infoOpenPopup()"> <a href="#"><span class="las la-check-circle"></span></a></button>
+                                                    <button class="dec-btn" title="DECLINE REQUEST" onclick="canOpenPopup()"> <a href="#"><span class="las la-times-circle"></span></a></button>
+                                                    <button class="pri-btn" title="PRINT REPORT" > <a href="../sa-purchasing/sa-print-order-purchase.html"><span class="las la-print"></span></a></button>
+                                                    <button class="expo-btn" title="EXPORT REPORT" > <a href="../sa-purchasing/sa-expo-order-purchase.html"><span class="las la-file-download"></span></a></button>
+                                                </div>
+                                            </td>                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="info-pop-container"  id="info-popup" >
+                <img src="../../../images/information.png">
+                <h2>System Warning!</h2>
+                <p>Do you want to accept employee's request?</p>
+                <button type="button" onclick="openPopup() + infoClosePopup()">Yes</button>
+                <button type="button" onclick="infoClosePopup()">Cancel</button>
+            </div>
+
+            <div class="save-pop-container"  id="popup" >
+                <img src="../../../images/tick.png">
+                <h2>Accepted!</h2>
+                <p>Request has been accepted!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+
+            <div class="can-pop-container"  id="can-popup" >
+                <img src="../../../images/warning.png">
+                <h2>System Warning!</h2>
+                <p>Are you sure you want to delete item on the list?</p>
+                <button type="button" onclick="remOpenPopup() + canClosePopup()">Yes</button>
+                <button type="button" onclick="canClosePopup()">Cancel</button>
+            </div>
+
+            <div class="rem-pop-container"  id="rem-popup" >
+                <img src="../../../images/remove.png">
+                <h2>Deleted!</h2>
+                <p>Item details has deleted in the list!</p>
+                <button type="button" onclick="remClosePopup()">OK</button>
+            </div>
+
+            <div class="print-pop-container"  id="print-popup" >
+                <img src="../../../images/printer.png">
+                <h2>Print!</h2>
+                <p>Print successfully!</p>
+                <button type="button" onclick="printClosePopup()">OK</button>
+            </div>
+
+            <div class="expo-pop-container"  id="expo-popup" >
+                <img src="../../../images/export.png">
+                <h2>Export!</h2>
+                <p>Exported Successfully!</p>
+                <button type="button" onclick="expoClosePopup()">OK</button>
+            </div>
+
+        </main>
+
+        <div class="footer">
+            <center>
+                <div class="footer-con">
+                    <img src="../../../images/codepheuse.png" alt="">
+                    <h4>CodePheus | 2022</h4>
+                </div>
+            </center>
+        </div>
+    </div>    
+    <script>
+
+        function userSortFunction() {
+            document.getElementById("ordSortDropdown").classList.toggle("order-sort-show");
+        }
+            
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.order-sort-btn')) {
+                var myDropdown = document.getElementById("ordSortDropdown");
+                if (myDropdown.classList.contains('order-sort-show')) {
+                  myDropdown.classList.remove('order-sort-show');
+                }
+              }
+            } 
+
+        let infopopup = document.getElementById("info-popup");
+        
+        function infoOpenPopup() {
+            infopopup.classList.add("info-popup-show")
+        }
+
+        function infoClosePopup() {
+            infopopup.classList.remove("info-popup-show")
+        }  
+        
+        let popup = document.getElementById("popup");
+        
+        function openPopup() {
+            popup.classList.add("open-popup-show")
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup-show")
+        }
+
+        let canpopup = document.getElementById("can-popup");
+        
+        function canOpenPopup() {
+            canpopup.classList.add("can-popup-show")
+        }
+
+        function canClosePopup() {
+            canpopup.classList.remove("can-popup-show")
+        }
+
+        let rempopup = document.getElementById("rem-popup");
+        
+        function remOpenPopup() {
+            rempopup.classList.add("rem-popup-show")
+        }
+
+        function remClosePopup() {
+            rempopup.classList.remove("rem-popup-show")
+        }
+        
+        let printpopup = document.getElementById("print-popup");
+        
+        function printOpenPopup() {
+            printpopup.classList.add("print-popup-show")
+        }
+
+        function printClosePopup() {
+            printpopup.classList.remove("print-popup-show")
+        } 
+
+        let expopopup = document.getElementById("expo-popup");
+        
+        function expoOpenPopup() {
+            expopopup.classList.add("expo-popup-show")
+        }
+
+        function expoClosePopup() {
+            expopopup.classList.remove("expo-popup-show")
+        } 
+    </script>
+</body>
+</html>
