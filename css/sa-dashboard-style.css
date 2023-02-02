@@ -66,10 +66,6 @@ body::-webkit-scrollbar{
     width: 0 !important;
   }
 
-table:wb:-webkit-scrollbar {
-    background-color: var(--text-color-red);
-}
-
 table {
     border-collapse: collapse;
 }
@@ -107,9 +103,66 @@ main {
     min-height: 100vh;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 /* END */
 
 /****************   01 - MESSEGE BOX STYLES  ******************/
+
+.err-pop-container {
+    width: 400px;
+    background: #16215B;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #fff;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 1;
+}
+
+.err-popup-show {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.err-pop-container img {
+    width: 100px;
+    margin-top: -50px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.err-pop-container h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.err-pop-container button {
+    display: inline-block;
+    width: 100px;    
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #fff;
+    color: #333;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 .info-pop-container {
     width: 400px;
     background: #16215B;
@@ -406,7 +459,7 @@ main {
 /************************* END ********************************/
 
 
-/******************* 02 - SIDEBAR STLE ***********************/
+/******************* 02 - SIDEBAR STYLE ***********************/
 .sidebar {
     width: 300px;
     position: fixed;
@@ -1555,11 +1608,12 @@ right .d-drop-btn span {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .inventory-form-container form .fields .input-field {
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 4 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }
@@ -4170,115 +4224,25 @@ right .d-drop-btn span {
     color: inherit;
 }
 
+    /*ADD POPUP*/
+
+.add-popup {
+    display: none;
+    position: fixed;
+    z-index: 0; /* Sit on top */
+    overflow-y:none; /* Disable horizontal scroll */
+    height: auto;
+    width: auto;
+    margin-top: -300px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .add-container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr;
     grid-gap: 2rem;
     margin-top: 0rem;
-}
-
-.image-container {
-    height: 250px;
-    width: 250px;
-    position: relative;
-}
-
-.image-container .wrapper {
-    position: relative;
-    height: 200px;
-    width: 100%;
-    border-radius: 10px;
-    background: #fff;
-    border: 2px dashed #c2cdda;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.wrapper .img-active{
-    border: none;
-  }
-
-.wrapper .user-image{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.wrapper .user-image img {
-    height: 100%;
-    width: 100%;
-    object-fit:fill;
-}
-
-.wrapper .image-icon{
-    font-size: 100px;
-    color: #16215B;
-    margin-left: 45px;
-}
-
-.wrapper .image-warn label{
-    font-size: 20px;
-    font-weight: 500;
-    color: #5B5B7B;
-}
-
-
-.wrapper #img-cancel-btn span{
-    position: absolute;
-    font-size: 20px;
-    right: 15px;
-    top: 15px;
-    color: #16215B;
-    cursor: pointer;
-}
-
-.wrapper .img-active:hover #img-cancel-btn span{
-    display: block;
-}
-
-.wrapper #img-cancel-btn span:hover{
-    color: #e74c3c;
-}
-
-.wrapper .image-file-name label{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    padding: 8px 0;
-    font-size: 18px;
-    color: #16215B;
-    display: none;
-    background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
-}
-
-.wrapper .img-active:hover .image-file-name{
-    display: block;
-  }
-
-.image-container #custom-btn{
-    margin-top: 30px;
-    display: block;
-    width: 100%;
-    height: 50px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    background: #16215B;
-}
-
-.image-container #custom-btn h3 {
-    font-size: 1rem;
 }
 
 .form-container .form-header {
@@ -4308,10 +4272,6 @@ right .d-drop-btn span {
     background-color: #4070f4;
 }
 
-.form-container .emer-details {
-    margin-top: 30px;
-}
-
 .form-container form {
     position: relative;
     margin-top: 16px;
@@ -4326,6 +4286,10 @@ right .d-drop-btn span {
     transition: 0.3s ease;
 }
 
+.form-container form .form-contents {
+    margin-top: 1rem;
+}
+
 .form-container form .fields {
     display: flex;
     align-items: center;
@@ -4335,7 +4299,7 @@ right .d-drop-btn span {
 
 .form-container form .fields .input-field {
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
     margin: 4px 0;
 }
@@ -4412,6 +4376,9 @@ right .d-drop-btn span {
     display: flex;
     align-items: center;
 }
+
+
+
 
 /****************************** END *********************************/
 /********************* 11 - PROJECT STYLES **************************/
