@@ -9,8 +9,12 @@ const barchart = new Chart(ctx, {
             label: 'Item Quantity',
             data: [500, 420, 881, 100, 350, 700],
             backgroundColor: [
-                '#16215B'
-                
+                '#00008B',
+                '#00FFFF',
+                '#FF0000',
+                '#800080',
+                '#FFFF00',
+                '#008000',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -23,11 +27,14 @@ const barchart = new Chart(ctx, {
             borderWidth: 1,
             hoverBackgroundColor: '#fff',
             hoverBorderWidth: 1,
-            hoverBorderColor: '#16215B'
-            
-
-        }]
-    },
+            hoverBorderColor: '#16215B',
+        },
+        {
+            label: 'Test',
+            backgroundColor: '#008000',
+        },
+    ]
+    },    
     options: {
         responsive: true,
         maintainAspectRatio: false,

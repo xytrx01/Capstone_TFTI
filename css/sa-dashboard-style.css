@@ -1218,6 +1218,8 @@ right .d-drop-btn span {
     border: 1px solid #aaa;
 }
 
+
+
 .recent-grid .inventory-sum .test{
     margin-left: -100px;
 }
@@ -1227,6 +1229,47 @@ right .d-drop-btn span {
     color: #7F8487;
     margin-bottom: 10px;
 }
+
+
+.card-headers {
+    padding: 1rem;
+}
+
+
+.card-headers {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-headers h3 {
+    color: #16215B;
+    font-size: 1rem;
+}
+
+.card-headers button {
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+    font-size: .8rem;
+    padding: .5rem;
+    border: 1px solid #B2B2B2;
+    margin: 0px;
+    margin-left: 620px;
+}
+
+.card-headers button a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.card-headers button:hover {
+    color: #fff;
+    background-color: #16215B;
+    cursor: pointer;
+}
+
+/* Card Header */
 
 .card-header {
     padding: 1rem;
@@ -1254,6 +1297,7 @@ right .d-drop-btn span {
     border: 1px solid #B2B2B2;
 }
 
+
 .card-header button a {
     display: inline-block;
     justify-content: space-between;
@@ -1271,8 +1315,14 @@ right .d-drop-btn span {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
-    
+    padding-bottom: 5px;
+}
+
+.chart-borders {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .chart {
@@ -1314,6 +1364,14 @@ right .d-drop-btn span {
     align-items: center;
     padding-left: 2rem;
 }
+
+.upper-section select {
+   max-width: 100%;
+   width: 170px;
+   text-align: center;
+   height: 40px;
+}
+
 
 
 .search-wrapper { 
@@ -1963,6 +2021,14 @@ right .d-drop-btn span {
     color: #333;
 }
 
+.purchase-form-contents .fields .input-field select{
+    max-width: 100%;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 5px;
+    
+}
+
 .purchase-add-container .purchase-form-container {
     position: relative;
     width: 100%;
@@ -2140,6 +2206,14 @@ right .d-drop-btn span {
 
 .deploy-body {
     padding: 30px;
+}
+
+.deploy-form-contents .fields .input-field select{
+    max-width: 100%;
+    width: 250px;
+    height: 30px;
+    margin-bottom: -5px;
+    
 }
 
 .deploy-header {    
@@ -3112,6 +3186,14 @@ right .d-drop-btn span {
     font-size: 20px;
     font-weight: 600;
     color: #333;
+}
+
+.supply-form-contents .fields .input-field select{
+    max-width: 100%;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 5px;
+    
 }
 
 .supply-add-container .supply-form-container {
