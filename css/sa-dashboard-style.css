@@ -1,7 +1,7 @@
 /* 
     00 - GENERAL STYLES
     01 - MESSEGE BOX STYLES
-    02 - SIDEBAR STLES
+    02 - SIDEBAR STYLES
     03 - SIDEBAR TOGGLE/HEADER/MAIN STYLES
     04 - DASHBOARD STYLES
     05 - INVENTORY STYLES
@@ -61,7 +61,7 @@ body {
     
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
     width: 0 !important;
   }
@@ -679,6 +679,10 @@ input::-webkit-inner-spin-button {
     left: 70px;
 }
 
+#nav-toggle:checked ~ .main-content .add-popup {
+    width: calc(50% - 300px);
+}
+
 .main-content {
     transition: margin-left 300ms;
     margin-left: 300px;
@@ -1202,6 +1206,22 @@ right .d-drop-btn span {
     overflow: hidden;
 }
 
+.recent-grid .inventory-sum .card .card-header select{
+    max-width: 100%;
+    width: 180px;
+    height: 30px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.recent-grid .inventory-sum .test{
+    margin-left: -100px;
+}
+
 .inventory-sum h3 {
     font-size: 1rem;
     color: #7F8487;
@@ -1211,6 +1231,7 @@ right .d-drop-btn span {
 .card-header {
     padding: 1rem;
 }
+
 
 .card-header {
     display: flex;
@@ -1613,9 +1634,52 @@ right .d-drop-btn span {
 
 .inventory-form-container form .fields .input-field {
     display: flex;
-    width: calc(100% / 4 - 15px);
+    width: calc(100% / 3 - 15px);
     flex-direction: column;
     margin: 4px 0;
+}
+
+.inventory-form-container form .input-field-size {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    width: 500px;
+}
+
+.inventory-form-container form .input-field-quantity {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    width: 500px;
+}
+
+.inventory-form-container form .input-field-size input {
+    width: 100%;
+    max-width: 500px;
+} 
+
+.inventory-form-container form .input-field-quantity input {
+    width: 100%;
+    max-width: 500px;
+} 
+
+.input-field-size select{
+    width: 50px;
+    max-width: 100%;    
+    margin-left: -29px;
+}
+
+.input-field-quantity select{
+    width: 50px;
+    max-width: 100%;    
+    margin-left: -29px;
+    
 }
 
 .inventory-form-container .input-field label {
@@ -1945,7 +2009,6 @@ right .d-drop-btn span {
     display: flex;
     width: calc(100% / 2 - 15px);
     flex-direction: column;
-    margin: 4px 0;
 }
 
 .purchase-form-container .input-field label {
@@ -1957,6 +2020,8 @@ right .d-drop-btn span {
 .purchase-form-container .input-field a{
     font-weight: 800;
 }
+
+
 
 
 .purchase-form-container .input-field input, select{
@@ -4225,22 +4290,55 @@ right .d-drop-btn span {
 }
 
     /*ADD POPUP*/
+.add-popup {
+    height: auto;
+    width: auto;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    color: #fff;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, .3);
+}
+
+.add-popup-show {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+
+/* 
+
+.user-con .act {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
 
 .add-popup {
     display: none;
     position: fixed;
-    z-index: 0; /* Sit on top */
-    overflow-y:none; /* Disable horizontal scroll */
+    z-index: 0; /* Sit on top 
+    overflow-y:none; /* Disable horizontal scroll 
     height: auto;
     width: auto;
-    margin-top: -300px;
+    margin-top: -20%;
     margin-left: 5%;
     margin-right: 5%;
 }
 
+*/
+
+
 .add-container {
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: 2rem;
     margin-top: 0rem;
 }

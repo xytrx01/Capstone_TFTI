@@ -53,11 +53,13 @@
                                     <span>Supply Request</span></a>
                             </li>                        
                         </div>
-                <li>                    
-                    <a href="../super-admin/operations/sa-purchasing/sa-purchasing.html"><span class="las la-dolly"></span>
-                        <span>Purchasing</span>
-                    </a>
-                </li>
+                 <!-- ------ HIDE PURCHASE TAB -------- 
+                            <li>                    
+                                <a href="../operations/sa-purchasing/sa-purchasing.html"><span class="las la-dolly"></span>
+                                    <span>Purchasing</span>
+                                </a>
+                            </li>
+                        -->
 
                 <li>                    
                     <a href="../super-admin/projects/sa-projects-ongoing.html"><span class="las la-pen-square"></span>
@@ -358,18 +360,39 @@
                     <div class="card">                        
                         <div class="card-header">
                             <h3>Item Categories Summary</h3>
-                            <a href="../super-admin/operations/sa-inventory/sa-inventory.html"><button> See more <span class="las la-arrow-right"></span></button></a>
+
+                        <div class="Test">
+                            <select required>
+                                <option disabled selected>Item Category</option>
+                                <option>...</option>
+                                <option>..</option>
+                            </select>
+                        </div>
+                            <select required>
+                                <option disabled selected>Local Category</option>
+                                <option>...</option>
+                                <option>..</option>
+                            </select>
+
+                            
+                            
                         </div>
                         <div class="chart-border">
                             <div class="chart">
                                 <canvas id="barchart" width="300" height="300"></canvas>
+                                
                             </div>
                         </div>
+
+                       
 
                         <div class="invent-sum-text">
                             <center>
                                 <h3>asdlgfhkjasdfh</h3>
                             </center>
+
+
+                        
                         </div>
 
                     </div>

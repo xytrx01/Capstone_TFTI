@@ -52,11 +52,13 @@
                                     <span>Supply Request</span></a>
                             </li>                        
                         </div>
-                <li>                    
-                    <a href="../../operations/sa-purchasing/sa-purchasing.html"><span class="las la-dolly"></span>
-                        <span>Purchasing</span>
-                    </a>
-                </li>
+               <!-- ------ HIDE PURCHASE TAB -------- 
+                            <li>                    
+                                <a href="../operations/sa-purchasing/sa-purchasing.html"><span class="las la-dolly"></span>
+                                    <span>Purchasing</span>
+                                </a>
+                            </li>
+                        -->
 
                 <li>                    
                     <a href="../../projects/sa-projects-ongoing.html"><span class="las la-pen-square"></span>
@@ -134,14 +136,43 @@
                                     </div>
 
                                     <div class="input-field">
+
                                         <label>Size</label>
-                                        <input type="number" placeholder="00000" required>
+
+                                        <div class="input-field-size">
+                                            
+                                            <input type="number" placeholder="00000" required>
+                                           
+                                            <select required>
+                                                <option disabled selected>Measurement</option>
+                                                <option>...</option>
+                                                <option>..</option>
+                                            </select>
+                                              
+                                        </div>
+                                        
                                     </div>
 
                                     <div class="input-field">
+
                                         <label>Quantity</label>
-                                        <input type="number" placeholder="00000" required>
-                                    </div>                            
+
+                                        <div class="input-field-quantity">
+                                            
+                                            <input type="number" placeholder="00000" required>
+                                           
+                                            <select required>
+                                                <option disabled selected>Measurement</option>
+                                                <option>...</option>
+                                                <option>..</option>
+                                            </select>
+                                              
+                                        </div>
+                                        
+                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>                   
