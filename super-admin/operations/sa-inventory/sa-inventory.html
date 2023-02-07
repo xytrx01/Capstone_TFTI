@@ -104,15 +104,18 @@
                     <input type="text" placeholder="Search here">
                 </div>
                 &nbsp;
-                <select required>
-                    <option disabled selected>Select Category</option>
-                    <option>Fittings</option>
-                    <option>Gate Valves</option>
-                    <option>Power Tools</option>
-                    <option>Fire Extinguisher</option>
-                    <option>Scaffolding</option>
-                    <option>Others</option>
-                </select>    
+                <div class="drp-wrapper">
+                    <select required>
+                        <option disabled selected>Select Category</option>
+                        <option>Fittings</option>
+                        <option>Gate Valves</option>
+                        <option>Power Tools</option>
+                        <option>Fire Extinguisher</option>
+                        <option>Scaffolding</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                    
             </div>
 
             <div class="inventory-grid">
@@ -122,6 +125,7 @@
                         <button class="add-btn" title="ADD NEW ITEM" onclick="addOpenPopupInv()" ><a><span class="las la-plus-circle"></span></a></button>
                         <button class="pri-btn" title="PRINT REPORT" onclick="printOpenPopup()"> <a href="#"><span class="las la-print"></span></a></button>
                         <button class="expo-btn" title="EXPORT REPORT" onclick="expoOpenPopup()"> <a href="#"><span class="las la-file-download"></span></a></button>
+                        <button class="expo-btn" title="ARCHIVE" onclick="OpenArchPopup()"> <a href="#"><span class="las la-file-archive"></span></a></button>
                         <button class="inventory-sort-btn" onclick="userSortFunction()">
                             <a> 
                                 <span></span> 
@@ -149,7 +153,10 @@
                                             <td>Type</td>
                                             <td>Size</td>
                                             <td>Quantity</td>
+                                            <td>Class</td>
+                                            <td>Date Added</td>
                                             <td>Action</td>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>                                        
@@ -158,15 +165,15 @@
                                             <td><label>Clarisse C. Vaquez</label></td>
                                             <td><label>Supervisor</label></td>
                                             <td><label>0923758923</label></td>
-                                            <td><label>Supervisor</label></td>
-                                            <td><label>Supervisor</label></td>
+                                            <td><label>12341241</label></td>
+                                            <td><label>1432143</label></td>
+                                            <td><label>Imported</label></td>
+                                            <td><label>00/00/00</label></td>
                                             
                                             <td>
                                                 <div class="inventory-action-style">
                                                     <button class="edit-btn" title="EDIT SELECTED ITEM" onclick="openEditForm()"> <a href="#"><span class="lar la-edit"></span></a></button>
                                                     <button class="del-btn" title="DELETE SELECTED ITEM" onclick="canOpenPopup()"> <a href="#"><span class="lar la-trash-alt"></span></a></button>
-                                                    <button class="pri-btn" title="PRINT REPORT" onclick="printOpenPopup()"> <a href="#"><span class="las la-print"></span></a></button>
-                                                    <button class="expo-btn" title="EXPORT REPORT" onclick="expoOpenPopup()"> <a href="#"><span class="las la-file-download"></span></a></button>
                                                 </div>
                                             </td>                                            
                                         </tr>
@@ -176,15 +183,15 @@
                                             <td><label>Clarisse C. Vaquez</label></td>
                                             <td><label>Supervisor</label></td>
                                             <td><label>0923758923</label></td>
-                                            <td><label>Supervisor</label></td>
-                                            <td><label>Supervisor</label></td>
+                                            <td><label>45674567474</label></td>
+                                            <td><label>123421345423</label></td>
+                                            <td><label>Local</label></td>
+                                            <td><label>00/00/00</label></td>
                                             
                                             <td>
                                                 <div class="inventory-action-style">
                                                     <button class="edit-btn" title="EDIT SELECTED ITEM" onclick="openEditForm()"> <a href="#"><span class="lar la-edit"></span></a></button>
                                                     <button class="del-btn" title="DELETE SELECTED ITEM" onclick="canOpenPopup()"> <a href="#"><span class="lar la-trash-alt"></span></a></button>
-                                                    <button class="pri-btn" title="PRINT REPORT" onclick="printOpenPopup()"> <a href="#"><span class="las la-print"></span></a></button>
-                                                    <button class="expo-btn" title="EXPORT REPORT" onclick="expoOpenPopup()"> <a href="#"><span class="las la-file-download"></span></a></button>
                                                 </div>
                                             </td>                                            
                                         </tr>                              
@@ -195,6 +202,101 @@
                     </div>
                 </div>
             </div> 
+
+            <div class="arch-popup" id="arch-popup">
+                <div class="arch-container">
+                    <div class="inventory-grid">
+                        
+                        <div class="inventory-projects">
+                            <div class="inventory">
+                                <div class="inventory-body">
+                                    <div class="inventory-header">
+                                        <h3>ARCHIVED ITEMS</h3>
+                                        <button class="ext-btn" title="EXIT" onclick="CloseArchPopup()"> <a href="#"><span  class="las la-times-circle"></span></a></button>                     
+                                    </div>
+                                    
+                                    <div class="table-responsive" style="overflow-x: auto;">
+                                        <table width="100%">
+                                            <thead>
+                                                <tr>                                            
+                                                    <td>ID</td>
+                                                    <td>Name</td>
+                                                    <td>Category</td>
+                                                    <td>Type</td>
+                                                    <td>Size</td>
+                                                    <td>Quantity</td>
+                                                    <td>Class</td>
+                                                    <td>Date Added</td>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                        
+                                                <tr>
+                                                    <td><label>00001</label></td>
+                                                    <td><label>Clarisse C. Vaquez</label></td>
+                                                    <td><label>Supervisor</label></td>
+                                                    <td><label>0923758923</label></td>
+                                                    <td><label>12341241</label></td>
+                                                    <td><label>1432143</label></td>
+                                                    <td><label>Imported</label></td>
+                                                    <td><label>00/00/00</label></td>
+                                                    
+                                                                                               
+                                                </tr>
+        
+                                                <tr>
+                                                    <td><label>00001</label></td>
+                                                    <td><label>Clarisse C. Vaquez</label></td>
+                                                    <td><label>Supervisor</label></td>
+                                                    <td><label>0923758923</label></td>
+                                                    <td><label>45674567474</label></td>
+                                                    <td><label>123421345423</label></td>
+                                                    <td><label>Local</label></td>
+                                                    <td><label>00/00/00</label></td>  
+                                                                                           
+                                                </tr>  
+                                                <tr>
+                                                    <td><label>00001</label></td>
+                                                    <td><label>Clarisse C. Vaquez</label></td>
+                                                    <td><label>Supervisor</label></td>
+                                                    <td><label>0923758923</label></td>
+                                                    <td><label>45674567474</label></td>
+                                                    <td><label>123421345423</label></td>
+                                                    <td><label>Local</label></td>
+                                                    <td><label>00/00/00</label></td>  
+                                                                                           
+                                                </tr>
+                                                <tr>
+                                                    <td><label>00001</label></td>
+                                                    <td><label>Clarisse C. Vaquez</label></td>
+                                                    <td><label>Supervisor</label></td>
+                                                    <td><label>0923758923</label></td>
+                                                    <td><label>45674567474</label></td>
+                                                    <td><label>123421345423</label></td>
+                                                    <td><label>Local</label></td>
+                                                    <td><label>00/00/00</label></td>  
+                                                                                           
+                                                </tr>                            
+                                                <tr>
+                                                    <td><label>00001</label></td>
+                                                    <td><label>Clarisse C. Vaquez</label></td>
+                                                    <td><label>Supervisor</label></td>
+                                                    <td><label>0923758923</label></td>
+                                                    <td><label>45674567474</label></td>
+                                                    <td><label>123421345423</label></td>
+                                                    <td><label>Local</label></td>
+                                                    <td><label>00/00/00</label></td>  
+                                                                                           
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>                
+            </div>
 
             <div class="add-popup-inv" id="add-popup-inv">
                 <div class="inventory-add-container">
@@ -255,6 +357,11 @@
                                                     <option>..</option>
                                                 </select>
                                             </div>
+                                        </div>
+
+                                        <div class="input-field">
+                                            <label>Date Added</label>
+                                            <input type="text" placeholder="00/00/00" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -372,7 +479,16 @@
 
         function addClosePopupInv() {
             addpopupinv.classList.remove("add-popup-inv-show")
-        }    
+        } 
+        
+        let archpopup = document.getElementById("arch-popup");
+        function OpenArchPopup() {
+            archpopup.classList.add("arch-popup-show")
+        }
+
+        function CloseArchPopup() {
+            archpopup.classList.remove("arch-popup-show")
+        }
          
         let canpopup = document.getElementById("can-popup");        
         function canOpenPopup() {
