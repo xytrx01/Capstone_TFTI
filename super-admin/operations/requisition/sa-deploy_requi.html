@@ -122,7 +122,7 @@
                 <div class="deploy-header">
                     <h3>DEPLOYMENT REQUEST LISTS</h3>
                     <div class="deploy-buttons-style">
-                        <button class="add-btn" title="ADD NEW REQUEST"><a href="../requisition/sa-add-deploy-requi.html"><span class="las la-plus-circle"></span></a></button>
+                        <button class="add-btn" title="ADD NEW REQUEST" onclick="addOpenPopupDep()"><a><span class="las la-plus-circle"></span></a></button>
                         <button class="pri-btn" title="PRINT REPORT"> <a href="../requisition/sa-print-deploy.html"><span class="las la-print"></span></a></button>
                         <button class="expo-btn" title="EXPORT REPORT"> <a href="../requisition/sa-expo-deploy.html"><span class="las la-file-download"></span></a></button>
                         <button class="deploy-sort-btn" onclick="userSortFunction()">
@@ -210,7 +210,118 @@
                 </div>
             </div>
 
+            <div class="add-popup-dep" id="add-popup-dep">
+
+                <div class="deploy-add-container">
+                    <div class="deploy-form-container">
+                        <form action="">
+                            <div class="request-details">
+                                <div class="deploy-form-header">
+                                    REQUEST DETAILS
+                                </div>
+                                <div class="deploy-form-contents">
+                                    <div class="fields">
+                                        <div class="input-field">
+                                            <label><a>Name: </a>
+                                                <select required>
+                                                <option disabled selected>Select Name</option>
+                                                <option>Supervisor</option>
+                                                <option>Office Manager</option>
+                                                <option>Warehouse Manager</option>
+                                            </select>                                      
+                                         </label>                                        
+                                        </div>
+                                        <div class="input-field">
+                                            <label><a>Role/Position: </a>Office Manager </label>                                        
+                                        </div>
+                                        <div class="input-field">
+                                            <label><a>Employee ID: </a>00001 </label>                                        
+                                        </div>
+                                        
+                                        <div class="input-field">
+                                            <label><a>Request Remarks: </a>Item for Deployment </label>                                        
+                                        </div>
+                                        <div class="input-field">
+                                            <label><a>Date Requested: </a>January 11, 2023 </label>                                        
+                                        </div>
+                                        <div class="input-field">
+                                            <label><a>Request ID: </a>SREQ234567 </label>                                        
+                                        </div>   
+                                        <div class="input-field">
+                                            <label></label>                                        
+                                        </div>    
+                                        <div class="input-field">
+                                            <label><a>Project Type: </a>Fire Fire Fire </label>                                        
+                                        </div>                                           
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="deploy-details">
+                                <div class="deploy-form-header">
+                                    ITEM DETAILS
+                                </div>
+                                <div class="deploy-form-contents">
+                                    <div class="deploy-form-table">
+                                        <div class="deploy-form-table-style">
+                                            <div class="table-responsive" style="overflow-x: auto;">
+                                                <table width="100%">
+                                                    <thead>
+                                                        <tr>                                            
+                                                            
+                                                            <td>Item Name</td>
+                                                            <td>Item Category</td>
+                                                            <td>Item Size</td>
+                                                            <td>Item Quantity</td>
+                                                            <td>Item Type</td>    
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>                                        
+                                                        <tr>
+                                                          
+                                                            <td contenteditable="false"><label>Gate Valve Flange Type</label></td>
+                                                            <td contenteditable="false"><label>Gate Valve</label></td>  
+                                                            <td contenteditable="true"><label>4"</label></td>
+                                                            <td contenteditable="true"><label>5 PCS</label></td>
+                                                            <td contenteditable="false"><label>Null</label></td>                                                                                             
+                                                        </tr>
+                                                        <tr>
+                                                           
+                                                            <td contenteditable="false"><label>Gate Valve Flange Type</label></td>
+                                                            <td contenteditable="false"><label>Gate Valve</label></td>  
+                                                            <td contenteditable="true"><label>4"</label></td>
+                                                            <td contenteditable="true"><label>5 PCS</label></td>
+                                                            <td contenteditable="false"><label>Null</label></td>                                                                                             
+                                                        </tr> 
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    
+                                </div>
+                            </div>
+    
+                            
+                        </form>
+                            <center>
+                                <div class="form-add-btns">
+                                    <button class="save" onclick="infoOpenPopup()">
+                                        <span class="btnText">Save</span>
+                                        <i class="las la-check-square"></i>
+                                    </button>
             
+                                    <button class="cancel">
+                                        <span class="btnText" onclick="canOpenPopup()">Cancel</span>
+                                        <i class="las la-window-close"></i>
+                                    </button>
+                                </div>
+                            </center>
+                    </div>
+                </div>
+
+            </div>
+
 
             <div class="info-pop-container"  id="info-popup" >
                 <img src="../../../images/information.png">
@@ -284,8 +395,18 @@
               }
             } 
 
-        let infopopup = document.getElementById("info-popup");
+        <!-- Messege Box -->    
         
+        let addpopupdep = document.getElementById("add-popup-dep");
+        function addOpenPopupDep() {
+            addpopupdep.classList.add("add-popup-dep-show")
+        }
+
+        function addClosePopupDep() {
+            addpopupdep.classList.remove("add-popup-dep-show")
+        }       
+
+        let infopopup = document.getElementById("info-popup");        
         function infoOpenPopup() {
             infopopup.classList.add("info-popup-show")
         }
@@ -294,8 +415,7 @@
             infopopup.classList.remove("info-popup-show")
         }  
         
-        let popup = document.getElementById("popup");
-        
+        let popup = document.getElementById("popup");        
         function openPopup() {
             popup.classList.add("open-popup-show")
         }
@@ -304,8 +424,7 @@
             popup.classList.remove("open-popup-show")
         }
 
-        let canpopup = document.getElementById("can-popup");
-        
+        let canpopup = document.getElementById("can-popup");        
         function canOpenPopup() {
             canpopup.classList.add("can-popup-show")
         }
@@ -314,8 +433,7 @@
             canpopup.classList.remove("can-popup-show")
         }
 
-        let rempopup = document.getElementById("rem-popup");
-        
+        let rempopup = document.getElementById("rem-popup");        
         function remOpenPopup() {
             rempopup.classList.add("rem-popup-show")
         }
@@ -324,8 +442,7 @@
             rempopup.classList.remove("rem-popup-show")
         }
         
-        let printpopup = document.getElementById("print-popup");
-        
+        let printpopup = document.getElementById("print-popup");        
         function printOpenPopup() {
             printpopup.classList.add("print-popup-show")
         }
@@ -334,8 +451,7 @@
             printpopup.classList.remove("print-popup-show")
         } 
 
-        let expopopup = document.getElementById("expo-popup");
-        
+        let expopopup = document.getElementById("expo-popup");        
         function expoOpenPopup() {
             expopopup.classList.add("expo-popup-show")
         }

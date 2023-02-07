@@ -96,9 +96,7 @@
                 Employee
             </h2>
         </header> 
-        <main>
-
-        <div class="user-con" id="user-con-blur">
+        <main>        
 
             <div class="upper-section">
                 <div class="search-wrapper">
@@ -198,12 +196,9 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>             
 
-        </div>    
-            
-
-            
+            <!--    ADD POPUP    -->
 
             <div class="add-popup" id="add-popup">
                 <div class="add-container">
@@ -269,18 +264,21 @@
                                     </div>
                                 </div>
                             </div>
+                                <center>
+                                    <div class="form-add-btns">
+                                        <button class="save" onclick="infoOpenPopup()">
+                                            <span class="btnText">Save</span>
+                                            <i class="las la-check-square"></i>
+                                        </button>
+            
+                                        <button class="cancel">
+                                            <span class="btnText" onclick="canOpenPopup() + closeAddForm()">Cancel</span>
+                                            <i class="las la-window-close"></i>
+                                        </button>
+                                    </div>
+                                </center>
     
-                            <div class="form-add-btns">
-                                <button class="save" onclick="infoOpenPopup()">
-                                    <span class="btnText">Save</span>
-                                    <i class="las la-check-square"></i>
-                                </button>
-    
-                                <button class="cancel">
-                                    <span class="btnText" onclick="canOpenPopup() + closeAddForm()">Cancel</span>
-                                    <i class="las la-window-close"></i>
-                                </button>
-                            </div>
+                            
                         </form>
                     </div>
                 </div>
@@ -379,8 +377,7 @@
             infopopup.classList.remove("info-popup-show")
         }
 
-        let popup = document.getElementById("popup");
-        
+        let popup = document.getElementById("popup");        
         function openPopup() {
             popup.classList.add("open-popup-show")
         }
