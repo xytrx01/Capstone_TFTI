@@ -480,14 +480,19 @@ iframe {
   right: 13px;
 }
 
-.alert-validate:hover:before {
+
+/*.alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
-}
+} */
 
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
   }
+}
+
+p{
+  color: red;
 }

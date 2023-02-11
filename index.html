@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>TFSTI</title>
-	<link rel="shortcut icon" type="image/icon" href="images/tfsti-logo-noname.png"/>
+	<title>TFSTI</title>
+	<link rel="shortcut icon" type="image/icon" href="images/tfsti-logo-noname.png" />
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/loginpage.css">
-	
+
 
 </head>
+
 <body>
-    <div class="limiter">
+	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
@@ -32,37 +34,40 @@
 					<span class="tfsti-motto">
 						Total Fire Safety and Technologies Inc.
 					</span>
-				</div>	
+				</div>
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
 						Employee Login
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Username">
+					<div class="wrap-input100 validate-input" data-validate="">
+						<input class="input100" type="text" name="email" placeholder="Username" id="em1">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user-circle" aria-hidden="true"></i>
 						</span>
 					</div>
+					<p class="emErr"></p>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="pw1">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-lock" aria-hidden="true" id="warning"></i>
 						</span>
 					</div>
-					
+					<p class="passErr"></p>
+
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" onclick="Validate()">
 							Login
 						</button>
+						<!-- <input type="submit" name="" class="login100-form-btn" value="Login" onclick="Validate()"> -->
 					</div>
 
 					<div class="text-center p-t-12">
-						
+
 					</div>
 
 					<div class="text-center p-t-136">
@@ -72,21 +77,50 @@
 		</div>
 	</div>
 
-<!--===============================================================================================-->	
+	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
+	<script>
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+
+	<!-- <script type="text/javascript" src="jquery-3.2.1.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		function Validate() {
+			var em = $("#em1").val();
+			var pass = $("#pw1").val();
+			var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			if (regex.test(em)) {
+				$(".emErr").html("");
+			} else if (em == "") {
+				$(".emErr").html("Please provide a username");
+			}
+			else {
+				$(".emErr").html("Valid email is required: ex@abc.xyz");
+			}
+
+			if (pass == "") {
+				$(".passErr").html("Please provide a password");
+			} else if (pass.length <= 5) {
+				$(".passErr").html("Password must be 5 characters");
+			} else if (pass) {
+				$(".passErr").html("");
+			}
+		}
+	</script>
+
 </body>
+
 </html>
