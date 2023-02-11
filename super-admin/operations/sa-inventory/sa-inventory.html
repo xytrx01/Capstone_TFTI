@@ -205,8 +205,7 @@
 
             <div class="arch-popup" id="arch-popup">
                 <div class="arch-container">
-                    <div class="inventory-grid">
-                        
+                    <div class="inventory-grid">                        
                         <div class="inventory-projects">
                             <div class="inventory">
                                 <div class="inventory-body">
@@ -300,11 +299,17 @@
 
             <div class="add-popup-inv" id="add-popup-inv">
                 <div class="inventory-add-container">
+                    <div class="img-wrapper">
+                        
+                    </div>
                     <div class="inventory-form-container">
                         <form action="">
                             <div class="details personal">
                                 <div class="inventory-form-header">
                                     ITEM DETAILS
+                                    <div class="inventory-buttons-style">
+                                        <button class="add-btn" title="ADD NEW ITEM" onclick="addOpenPopupInv()" ><a>Add Item</a></button>
+                                    </div>
                                 </div>
                                 <div class="inventory-form-contents">
                                     <div class="fields">
@@ -342,8 +347,8 @@
                                                 <input type="number" placeholder="00000" required>
                                                 <select required>
                                                     <option disabled selected>Measurement</option>
-                                                    <option>...</option>
-                                                    <option>..</option>
+                                                    <option>cm</option>
+                                                    <option>inch</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -353,8 +358,8 @@
                                                 <input type="number" placeholder="00000" required>
                                                 <select required>
                                                     <option disabled selected>Measurement</option>
-                                                    <option>...</option>
-                                                    <option>..</option>
+                                                    <option>cm</option>
+                                                    <option>inch</option>
                                                 </select>
                                             </div>
                                         </div>

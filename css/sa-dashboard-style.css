@@ -691,7 +691,7 @@ input::-webkit-inner-spin-button {
 #nav-toggle:checked ~ .main-content .add-popup-pur,
 #nav-toggle:checked ~ .main-content .add-popup-dep,
 #nav-toggle:checked ~ .main-content .add-popup-sup {
-    width: calc(70% - 300px);
+    width: calc(90% - 300px);
 }
 
 .main-content {
@@ -1595,7 +1595,7 @@ right .d-drop-btn span {
 
 .add-popup-inv {
     height: auto;
-    width: auto;
+    width: 70%;
     border-radius: 6px;
     position: absolute;
     top: 0;
@@ -1607,7 +1607,6 @@ right .d-drop-btn span {
     z-index: 0;
     margin-left: 5%;
     margin-right: 5%;
-    
 }
 
 .add-popup-inv-show {
@@ -1621,8 +1620,8 @@ right .d-drop-btn span {
 /*ARCHIVE POPUP INVENTORY*/
 
 .arch-popup {
-    height: 50%;
-    width: 60%;
+    height: auto;
+    width: 70%;
     border-radius: 6px;
     position: absolute;
     top: 0;
@@ -1693,11 +1692,33 @@ right .d-drop-btn span {
     box-shadow: 0 0px 30px rgba(0, 0, 0, .3);   
 }
 
+.inventory-add-container .inventory-form-container .inventory-buttons-style button {
+    width: 120px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    background: #fff;
+    color: #333;
+    border: .1px solid #B2B2B2;
+    outline: 0;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inventory-form-container .inventory-buttons-style button:hover {
+    color: #fff;
+    background-color: #16215B;
+    cursor: pointer;
+}
+
+
 .inventory-form-container .inventory-form-header::before {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: 20px;
     height: 3px;
     width: 35px;
     border-radius: 8px;
@@ -1763,14 +1784,16 @@ right .d-drop-btn span {
     max-width: 500px;
 } 
 
-.input-field-size select{
-    width: 50px;
+.input-field-size select {
+    width: 100px;
     max-width: 100%;    
     margin-left: -29px;
 }
 
-.input-field-quantity select{
-    width: 50px;
+
+
+.input-field-quantity select {
+    width: 100px;
     max-width: 100%;    
     margin-left: -29px;
     
@@ -1958,9 +1981,7 @@ right .d-drop-btn span {
 }
 
 .purchase-body .purchase-action-style {
-    display: block;
-    margin-left: -10px;
-    margin-top: 5px;
+    display: flex;
 }
 
 .purchase-body .purchase-action-style button {
@@ -5378,15 +5399,15 @@ right .d-drop-btn span {
     }
 
     .inventory-header h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .inventory-header .inventory-buttons-style {
-        margin-left: 490px;
+        margin-left: 175px;
     }
-
     .inventory-header button {
         margin-left: 2px;
+        
     }
 
     .inventory-header .inventory-sort-btn {
@@ -5398,7 +5419,8 @@ right .d-drop-btn span {
     }    
 
     .add-popup-inv {
-        left: 45%;
+        width: 100%;
+        margin: 0;
     }
 
     .inventory-form-container .inventory-form-header {
@@ -5409,7 +5431,65 @@ right .d-drop-btn span {
         width: calc(100% / 2 - 15px);
         margin: 2px 0;
     }
+
+    .inventory-form-container form button, .btnText {
+        width: 150px;
+    }
+
+    .inventory-add-container .inventory-form-container .inventory-buttons-style button {
+        width: 100px;
+    }    
     /* END */
+
+    /* PURCHASE REQUST STYLE RESPONSIVE */
+
+    .purchase-projects {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .purchase-header {
+        margin-left: 0;
+        display: inline-block;
+    }
+
+    .purchase-header h3 {
+        font-size: 15px;    
+        margin: 0;
+    }
+
+    .purchase-header .purchase-buttons-style {
+        margin-left: 225px;
+    }
+
+    .purchase-header button {
+        margin-left: 2px;
+    }
+
+    .purchase-header .purchase-sort-btn {
+        margin-left: 2px;
+    }
+
+    .purchase-body table {
+        margin: 0;
+    } 
+
+    .purchase-body table td label {
+        font-size: 14px;
+    }
+
+    .add-popup-pur {
+        width: 100%;
+        margin: 0;
+    }
+
+    .purchase-add-container {
+        width: 100px;
+    }
+
+    /* END */
+
 }
 
 @media all and (max-width: 480px) {
@@ -5488,7 +5568,7 @@ right .d-drop-btn span {
     }
 
     .inventory-header .inventory-buttons-style {
-        margin-left: 210px;
+        margin-left: 150px;
     }
 
     .inventory-header button {
@@ -5504,7 +5584,7 @@ right .d-drop-btn span {
     }    
 
     .add-popup-inv {
-        left: 45%;
+        width: 100%;
     }
 
     .inventory-form-container .inventory-form-header {
@@ -5519,9 +5599,54 @@ right .d-drop-btn span {
         width: calc(100% / 2 - 15px);
         margin: 2px 0;
     }
+
+    .inventory-form-container form button, .btnText {
+        width: 150px;
+    }
+
+    .arch-popup {
+        width: 100%;        
+    }
+
     /* END */
 
-    /* PURCHASING REQUST STYLE RESPONSIVE */
+    /* PURCHASE REQUST STYLE RESPONSIVE */
+
+    .purchase-projects {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .purchase-header {
+        margin-left: 0;
+        display: inline-block;
+    }
+
+    .purchase-header h3 {
+        font-size: 15px;    
+        margin: 0;
+    }
+
+    .purchase-header .purchase-buttons-style {
+        margin-left: 210px;
+    }
+
+    .purchase-header button {
+        margin-left: 2px;
+    }
+
+    .purchase-header .purchase-sort-btn {
+        margin-left: 2px;
+    }
+
+    .purchase-body table {
+        margin: 0;
+    } 
+
+    .purchase-body table td label {
+        font-size: 14px;
+    }
 
     /* END */
 
