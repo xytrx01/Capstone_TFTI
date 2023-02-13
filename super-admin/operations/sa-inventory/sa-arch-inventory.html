@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TFSTI - Inventory</title>
+    <link rel="shortcut icon" type="image/icon" href="../../../images/tfsti-logo-noname.png"/>
+    
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/sa-dashboard-style.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="user-wrapper">
+            <img src="../../../images/profile.png" alt="" class="profile-user" width="40px" height="40px">
+            <div>
+                <h4>Juan Dela Cruz</h4>
+                <small>Super Admin</small>
+            </div>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../../sa-dashboard.html"><span class="las la-tv"></span>
+                        <span>Dashboard</span></a>
+                </li>
+
+                <button class="oper-dropdown-btn">
+                    <a> <span class="las la-warehouse"></span>
+                        <span>Inventories</span> 
+                    </a>                    
+                </button>
+                    <div class="dropdown-container">
+                        <li>
+                            <a href="../sa-inventory/sa-inventory.html" ><span class="las la-cubes"></span>
+                                <span>Inventory Lists</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="las la-archive"></span>
+                                <span>Inventory Archive</span></a>
+                        </li>                      
+                    </div>
+                
+                    <button class="oper-dropdown-btn">
+                        <a> <span class="las la-caret-down"></span>
+                            <span>Requisition</span> 
+                        </a>                    
+                    </button>
+                        <div class="dropdown-container">
+                            <li>
+                                <a href="../requisition/sa-pur_requi.html"><span class="las la-file"></span>
+                                    <span>Purchasing Request</span></a>
+                            </li>
+                            <li>
+                                <a href="../requisition/sa-deploy_requi.html"><span class="las la-folder"></span>
+                                    <span>Deployment Request</span></a>
+                            </li> 
+                            <li>
+                                <a href="../requisition/sa-supp-requi.html"><span class="lar la-folder-open"></span>
+                                    <span>Supply Request</span></a>
+                            </li>                        
+                        </div>
+                 <!-- ------ HIDE PURCHASE TAB -------- 
+                            <li>                    
+                                <a href="../operations/sa-purchasing/sa-purchasing.html"><span class="las la-dolly"></span>
+                                    <span>Purchasing</span>
+                                </a>
+                            </li>
+                        -->
+
+                <li>                    
+                    <a href="../../projects/sa-projects-ongoing.html"><span class="las la-pen-square"></span>
+                        <span>Projects</span>
+                    </a>
+                </li>
+
+                <li>                    
+                    <a href="../../administration/sa-users.html"><span class="las la-user-tie"></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+
+               
+                <li>                    
+                    <a href="../../../index.html"><span class="las la-sign-out-alt"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="logo-float">
+            <img src="../../../images/tfsti-logo.png" alt="">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Inventories
+            </h2>
+        </header>           
+
+        <main>
+
+            <div class="upper-section">
+                <div class="search-wrapper">
+                    <span class="las la-search"></span>
+                    <input type="text" placeholder="Search here">
+                </div>
+                &nbsp;
+                <div class="drp-wrapper">
+                    <select required>
+                        <option disabled selected>Select Category</option>
+                        <option>Fittings</option>
+                        <option>Gate Valves</option>
+                        <option>Power Tools</option>
+                        <option>Fire Extinguisher</option>
+                        <option>Scaffolding</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                    
+            </div>

@@ -28,11 +28,23 @@
                     <a href="../../sa-dashboard.html"><span class="las la-tv"></span>
                         <span>Dashboard</span></a>
                 </li>
+
+                <button class="oper-dropdown-btn">
+                    <a> <span class="las la-warehouse"></span>
+                        <span>Inventories</span> 
+                    </a>                    
+                </button>
+                    <div class="dropdown-container">
+                        <li>
+                            <a href="../sa-inventory/sa-inventory.html" class="active"><span class="las la-cubes"></span>
+                                <span>Inventory Lists</span></a>
+                        </li>
+                        <li>
+                            <a href="../sa-inventory/sa-arch-inventory.html"><span class="las la-archive"></span>
+                                <span>Inventory Archive</span></a>
+                        </li>                      
+                    </div>
                 
-                <li>
-                    <a href="../sa-inventory/sa-inventory.html" class="active"><span class="las la-warehouse"></span>
-                        <span>Inventories</span></a>
-                </li>
                     <button class="oper-dropdown-btn">
                         <a> <span class="las la-caret-down"></span>
                             <span>Requisition</span> 
@@ -122,10 +134,10 @@
                 <div class="inventory-header">
                     <h3>INVENTORY ITEMS</h3>
                     <div class="inventory-buttons-style">
+                        <button class="add-btn" title="ADD ITEM QUANTITY" onclick="addOpenPopupInv()" ><a><span class="las la-boxes"></span></a></button>
                         <button class="add-btn" title="ADD NEW ITEM" onclick="addOpenPopupInv()" ><a><span class="las la-plus-circle"></span></a></button>
                         <button class="pri-btn" title="PRINT REPORT" onclick="printOpenPopup()"> <a href="#"><span class="las la-print"></span></a></button>
                         <button class="expo-btn" title="EXPORT REPORT" onclick="expoOpenPopup()"> <a href="#"><span class="las la-file-download"></span></a></button>
-                        <button class="expo-btn" title="ARCHIVE" onclick="OpenArchPopup()"> <a href="#"><span class="las la-file-archive"></span></a></button>
                         <button class="inventory-sort-btn" onclick="userSortFunction()">
                             <a> 
                                 <span></span> 
