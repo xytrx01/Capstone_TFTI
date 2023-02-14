@@ -1416,6 +1416,12 @@ right .d-drop-btn span {
     background-color: #fff;
     border-radius: 5px;    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.inventory::-webkit-scrollbar{
+    display: none;
 }
 
 .inventory-projects {
@@ -1426,6 +1432,7 @@ right .d-drop-btn span {
     grid-gap: 2rem;
     grid-template-columns: 100% auto;
     border-spacing: 1px;
+    
 }
 
 .inventory-body {
@@ -1442,10 +1449,6 @@ right .d-drop-btn span {
     font-size: 1.5rem;
     color: #000;
     margin-bottom: -20px;
-}
-
-.inventory-body table ::-webkit-scrollbar{
-    display: none;
 }
 
 .inventory-body table td label {
@@ -1610,33 +1613,6 @@ right .d-drop-btn span {
 }
 
 .add-popup-inv-show {
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(1);
-}
-
-/* END */
-
-/*ARCHIVE POPUP INVENTORY*/
-
-.arch-popup {
-    height: auto;
-    width: 70%;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    color: #fff;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    z-index: 0;
-    margin-left: 5%;
-    margin-right: 5%;
-    
-}
-
-.arch-popup-show {
     visibility: visible;
     top: 50%;
     transform: translate(-50%,-50%) scale(1);
@@ -1872,6 +1848,12 @@ right .d-drop-btn span {
     align-items: center;
 }
 
+/*ARCHIVE INVENTORY*/
+
+
+
+/* END */
+
 /************************* END ********************************/
 
 /************* 06 - PURCHASE REQUEST STYLES *******************/
@@ -1880,6 +1862,12 @@ right .d-drop-btn span {
     background-color: #fff;
     border-radius: 5px;    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.purchase::-webkit-scrollbar{
+    display: none;
 }
 
 .purchase-projects {
@@ -2276,6 +2264,12 @@ right .d-drop-btn span {
     background-color: #fff;
     border-radius: 5px;    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.deploy::-webkit-scrollbar{
+    display: none;
 }
 
 .deploy-projects {
@@ -3098,6 +3092,12 @@ right .d-drop-btn span {
     background-color: #fff;
     border-radius: 5px;    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.supply::-webkit-scrollbar {
+    display: none;
 }
 
 .supply-projects {
@@ -4278,6 +4278,12 @@ right .d-drop-btn span {
     background-color: #fff;
     border-radius: 5px;    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.users::-webkit-scrollbar{
+    display: none;
 }
 
 .user-projects {
@@ -4456,10 +4462,8 @@ right .d-drop-btn span {
     display: block;
 }
 
-.user-body table img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+.user-body table th tr {
+    position: fixed;
 }
 
 .user-body table td label {
