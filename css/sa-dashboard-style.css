@@ -1418,6 +1418,7 @@ right .d-drop-btn span {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     max-height: 400px;
     overflow: scroll;
+   /* border: 1px solid #181823;*/
 }
 
 .inventory::-webkit-scrollbar{
@@ -4681,10 +4682,27 @@ right .d-drop-btn span {
 
 /****************************** END *********************************/
 /********************* 11 - PROJECT STYLES **************************/
+.proj-grid {
+    background-color: #BBBFCA;
+    width: auto;
+    height: auto;
+}
+
+.proj-header {
+    padding-top: 30px;
+}
+
+.proj-header h2 {
+    color: #14274E;
+}
+
+
 .proj {
     background-color: #fff;
-    border-radius: 5px;    
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 1px;    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);   
+    margin-top: 10px;
+    display: flex;
 }
 
 .proj-projects {
@@ -4692,9 +4710,109 @@ right .d-drop-btn span {
     margin-left: 30px;  
     margin-right: 30px;
     display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 100% auto;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+    max-height: 500px;
 }
+
+.proj-projects::-webkit-scrollbar {
+    display: block;
+} 
+
+.proj-header .proj-buttons {
+    display: block;
+    margin-left: 30px;
+}
+
+.proj-header .proj-buttons select, 
+.proj-header .proj-buttons button {
+    max-width: 100%;
+    width: 100px;
+    height: 25px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.proj-header .proj-buttons button i {
+    margin-right: 5px;
+}
+ 
+.proj-container .img-container {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    background-color: #16215B;
+    border-radius: 3px;
+    box-shadow: 0 8px 6px -6px black;; 
+}
+
+.proj-container .title-container h2 {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.proj-container .text-container {
+    font-size: 13px;
+    margin-top: 45px;
+    margin-left: 10px;
+}
+
+.proj-container .text-container label {
+    font-weight: 800;
+}
+
+.proj-container .prog-container {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+    margin-top: 2%;
+    overflow: hidden;
+}
+
+.proj-container .prog-bar {
+    background-color: #ECECEC;
+    border: 1px solid #aaa;
+    width: 500px;
+    height: 20px;
+}
+
+.proj-container .prog-bar .prog-bar-per {
+    width: 25%;
+    background-color: #16215B;
+    height: 20px;
+}
+
+.proj-container .prog-button {
+    margin-top: 10px;
+    margin-left: 82%;
+}
+
+.proj-container .prog-button button {
+    width: 90px;
+    height: 25px;
+    border-radius: 4px;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #B2B2B2;
+    font-size: 11px;
+}
+
+.proj-container .prog-button button:hover {
+    background-color: #16215B;
+    color: #fff;
+}
+
 
 .proj-body {
     padding: 30px;
